@@ -38,7 +38,7 @@ icons[shutdown]="\Uf0425"
 icons[cancel]="\Uf0156"
 
 declare -A actions
-actions[lockscreen]="sh -c 'hyprlock >/dev/null 2>&1 &'"
+actions[lockscreen]="hyprlock >/dev/null 2>&1 &"
 #actions[switchuser]="???"
 actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
 actions[suspend]="systemctl suspend"
