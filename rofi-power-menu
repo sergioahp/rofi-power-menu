@@ -37,8 +37,13 @@ icons[reboot]="\Uf0709"
 icons[shutdown]="\Uf0425"
 icons[cancel]="\Uf0156"
 
+# Wrapper function to launch hyprlock without capturing output
+lock_screen() {
+    hyprlock >/dev/null 2>&1 &
+}
+
 declare -A actions
-actions[lockscreen]="hyprlock >/dev/null 2>&1 &"
+actions[lockscreen]="lock_screen"
 #actions[switchuser]="???"
 actions[logout]="loginctl terminate-session ${XDG_SESSION_ID-}"
 actions[suspend]="systemctl suspend"
